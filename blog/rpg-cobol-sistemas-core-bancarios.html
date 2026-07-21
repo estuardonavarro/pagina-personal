@@ -10,30 +10,28 @@
 <body>
 
 <header class="site-header">
-  <div class="container">
-    <a href="../index.html" class="brand">estuardo<span class="dot">.</span>navarro</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html#trayectoria">Trayectoria</a></li>
-      <li><a href="../index.html#proyectos">Proyectos</a></li>
-      <li><a href="index.html">Blog</a></li>
-      <li><a href="../index.html#contacto">Contacto</a></li>
-    </ul>
-  </div>
+  <a href="../index.html" class="brand">J. Navarro — CIO</a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <ul class="site-nav" id="navLinks">
+    <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+    <li><a href="../index.html#formacion">Formación</a></li>
+    <li><a href="../index.html#proyecto">Proyecto</a></li>
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="../index.html#contacto" class="link">Contacto →</a></li>
+  </ul>
 </header>
 
-<main>
-  <section style="border-top:none;">
-    <div class="container">
-      <a href="index.html" class="back-link">← Todas las entradas</a>
+<section class="wrap section section--hero">
+  <a href="index.html" class="back-link">← Todas las entradas</a>
+  <div class="post-header">
+    <span class="post-meta">Julio 2026 · Sistemas core</span>
+    <h1>RPG y COBOL en el corazón de la banca</h1>
+  </div>
+</section>
 
-      <div class="post-header">
-        <span class="post-date">Julio 2026</span>
-        <h1>RPG y COBOL en el corazón de la banca</h1>
-      </div>
-
-      <div class="post-body">
-        <p>
+<section class="wrap section" style="padding-top:28px;">
+  <div class="post-body">
+<p>
           Es una paradoja que sorprende a quien recién entra a trabajar con sistemas bancarios: el software que
           procesa las transacciones más críticas de un banco —cuentas, préstamos, movimientos— con frecuencia no
           está escrito en el lenguaje de moda del momento, sino en RPG o COBOL, corriendo sobre un AS/400 (hoy
@@ -75,16 +73,12 @@
           La pregunta correcta casi nunca es "¿cuándo reemplazamos COBOL?". Es "¿qué tan bien entendemos lo que
           este sistema realmente hace, y qué tan preparados estamos para tocarlo con seguridad?".
         </p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
-    <span>Guatemala</span>
   </div>
+</section>
+
+<footer class="wrap site-footer">
+  <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
+  <span>Guatemala</span>
 </footer>
 
 <script>

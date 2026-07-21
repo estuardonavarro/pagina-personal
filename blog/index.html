@@ -9,71 +9,50 @@
 <body>
 
 <header class="site-header">
-  <div class="container">
-    <a href="../index.html" class="brand">estuardo<span class="dot">.</span>navarro</a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html#trayectoria">Trayectoria</a></li>
-      <li><a href="../index.html#proyectos">Proyectos</a></li>
-      <li><a href="index.html">Blog</a></li>
-      <li><a href="../index.html#contacto">Contacto</a></li>
-    </ul>
-  </div>
+  <a href="../index.html" class="brand">J. Navarro — CIO</a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <ul class="site-nav" id="navLinks">
+    <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+    <li><a href="../index.html#formacion">Formación</a></li>
+    <li><a href="../index.html#proyecto">Proyecto</a></li>
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="../index.html#contacto" class="link">Contacto →</a></li>
+  </ul>
 </header>
 
-<main>
-  <section style="border-top:none; padding-bottom: 24px;">
-    <div class="container">
-      <span class="eyebrow">Blog</span>
-      <h1 style="font-size: 2rem; margin-top: 8px;">Entradas</h1>
-    </div>
-  </section>
+<section class="wrap section section--hero">
+  <span class="eyebrow">Blog</span>
+  <h1 style="font-size:32px; font-weight:700; margin:10px 0 0; letter-spacing:-0.01em;">Entradas</h1>
+</section>
 
-  <section style="padding-top: 0;">
-    <div class="container">
-      <!--
-        Para agregar una entrada nueva: copia uno de estos archivos como base,
-        edita título/fecha/contenido, y agrega un <li> aquí arriba de esta lista.
-      -->
-      <ul class="post-index">
-        <li>
-          <a href="innovacion-transformacion-digital-sector-financiero.html">
-            <span class="post-date">Julio 2026</span>
-            <span class="post-title">Innovación y transformación digital en el sector financiero</span>
-            <span class="post-excerpt">Por qué el reto de innovar en banca casi nunca es tecnológico, y qué papel juega quien dirige tecnología en una institución regulada.</span>
-          </a>
-        </li>
-        <li>
-          <a href="rpg-cobol-sistemas-core-bancarios.html">
-            <span class="post-date">Julio 2026</span>
-            <span class="post-title">RPG y COBOL en el corazón de la banca</span>
-            <span class="post-excerpt">Por qué los sistemas core más críticos siguen sobre lenguajes de décadas atrás, y cómo modernizarlos sin apagar el motor.</span>
-          </a>
-        </li>
-        <li>
-          <a href="microservicios-spring-boot-java.html">
-            <span class="post-date">Julio 2026</span>
-            <span class="post-title">Microservicios con Spring Boot en Java</span>
-            <span class="post-excerpt">Los bloques básicos de una arquitectura de microservicios, los problemas que no salen en el tutorial, y cuándo no usarlos.</span>
-          </a>
-        </li>
-        <li>
-          <a href="que-son-los-compiladores.html">
-            <span class="post-date">Julio 2026</span>
-            <span class="post-title">Qué son los compiladores (y por qué todo programador debería entenderlos)</span>
-            <span class="post-excerpt">Un recorrido breve por las fases de un compilador y por qué entenderlas cambia cómo escribes código.</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
-    <span>Guatemala</span>
+<section class="wrap section" style="padding-top:28px;">
+  <!--
+    Para agregar una entrada nueva: copia uno de estos archivos como base,
+    edita título/fecha/contenido, y agrega un elemento aquí arriba de esta lista.
+  -->
+  <div class="blog-list">
+    <a href="innovacion-transformacion-digital-sector-financiero.html" class="blog-list-item">
+      <span class="blog-item-title">Innovación y transformación digital en el sector financiero</span>
+      <span class="blog-item-tag">Estrategia</span>
+    </a>
+    <a href="rpg-cobol-sistemas-core-bancarios.html" class="blog-list-item">
+      <span class="blog-item-title">RPG y COBOL en el corazón de la banca</span>
+      <span class="blog-item-tag">Sistemas core</span>
+    </a>
+    <a href="microservicios-spring-boot-java.html" class="blog-list-item">
+      <span class="blog-item-title">Microservicios con Spring Boot en Java</span>
+      <span class="blog-item-tag">Arquitectura</span>
+    </a>
+    <a href="que-son-los-compiladores.html" class="blog-list-item">
+      <span class="blog-item-title">Qué son los compiladores</span>
+      <span class="blog-item-tag">Fundamentos</span>
+    </a>
   </div>
+</section>
+
+<footer class="wrap site-footer">
+  <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
+  <span>Guatemala</span>
 </footer>
 
 <script>
