@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPG y COBOL en el corazón de la banca — Javier Estuardo Navarro Delgado</title>
+<meta name="description" content="Por qué los sistemas core bancarios más críticos siguen corriendo sobre lenguajes de décadas atrás, y cómo modernizarlos sin apagar el motor.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">estuardo<span class="dot">.</span>navarro</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none;">
+    <div class="container">
+      <a href="index.html" class="back-link">← Todas las entradas</a>
+
+      <div class="post-header">
+        <span class="post-date">Julio 2026</span>
+        <h1>RPG y COBOL en el corazón de la banca</h1>
+      </div>
+
+      <div class="post-body">
+        <p>
+          Es una paradoja que sorprende a quien recién entra a trabajar con sistemas bancarios: el software que
+          procesa las transacciones más críticas de un banco —cuentas, préstamos, movimientos— con frecuencia no
+          está escrito en el lenguaje de moda del momento, sino en RPG o COBOL, corriendo sobre un AS/400 (hoy
+          IBM i) que lleva décadas en producción. Y con frecuencia, funciona mejor de lo que el prejuicio contra
+          "lo viejo" sugiere.
+        </p>
+
+        <h2>Por qué siguen ahí</h2>
+        <p>
+          No es inercia, o no solo. Estos sistemas llevan décadas procesando transacciones reales, lo que
+          significa décadas de errores encontrados y corregidos en el camino. RPG y COBOL fueron diseñados para
+          exactamente este tipo de carga: procesamiento transaccional de alto volumen, con requisitos estrictos
+          de integridad. Reescribir ese comportamiento desde cero no es solo un ejercicio de traducción de
+          sintaxis; es reconstruir décadas de reglas de negocio que muchas veces no están documentadas en ningún
+          otro lugar más que en el propio código.
+        </p>
+
+        <h2>El verdadero riesgo no es el lenguaje, es el conocimiento</h2>
+        <p>
+          El riesgo real de estos sistemas no es técnico, es humano: hay cada vez menos profesionales jóvenes que
+          aprenden RPG o COBOL, y quienes conocen a fondo esos sistemas se van acercando al retiro. Un sistema
+          bien escrito en un lenguaje "viejo" pero bien entendido es menos riesgoso que un sistema moderno que
+          nadie en el equipo comprende del todo. Por eso, en mi experiencia, la prioridad de modernización no
+          siempre es reemplazar el lenguaje —es documentar, transferir conocimiento, y construir una capa de
+          pruebas alrededor del comportamiento actual antes de tocar nada.
+        </p>
+
+        <h2>Modernizar sin apagar el motor</h2>
+        <p>
+          El enfoque que mejor me ha funcionado no es la reescritura total, sino el patrón conocido como
+          "strangler fig": envolver el sistema core con una capa de APIs que expone sus funciones de forma
+          moderna, mientras el núcleo sigue corriendo intacto. Los nuevos canales —banca móvil, integraciones con
+          terceros, analítica— se construyen contra esa capa, no contra el sistema legado directamente. Con el
+          tiempo, se puede ir migrando funcionalidad específica hacia arquitecturas más nuevas, módulo por
+          módulo, sin apostar la operación completa del banco a una migración de una sola vez.
+        </p>
+
+        <p>
+          La pregunta correcta casi nunca es "¿cuándo reemplazamos COBOL?". Es "¿qué tan bien entendemos lo que
+          este sistema realmente hace, y qué tan preparados estamos para tocarlo con seguridad?".
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
+    <span>Guatemala</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<!-- Analítica (Cloudflare Web Analytics) — gratis, sin cookies.
+     1. Crea cuenta gratis en https://dash.cloudflare.com
+     2. Analytics & Logs → Web Analytics → Add a site → pega tu dominio
+     3. Copia el script que te dan y reemplaza la línea de abajo en TODAS las páginas -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TU_TOKEN_AQUI"}'></script> -->
+
+</body>
+</html>

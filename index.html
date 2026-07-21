@@ -3,25 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Javier — Innovación, Datos y Transformación Digital</title>
-<meta name="description" content="Página personal de Javier: gestión de innovación y datos en banca, consultoría, docencia y escritura.">
+<title>Javier Estuardo Navarro Delgado — Innovación, Datos y Transformación Digital</title>
+<meta name="description" content="Página personal de Javier Estuardo Navarro Delgado: gestión de innovación y datos en banca, consultoría, docencia y escritura.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!--
   ============================================================
-  EDITA AQUÍ (lo esencial antes de publicar):
-  1. Reemplaza "Javier" por tu nombre completo donde aparezca.
-  2. Sección "Contacto" al final: agrega tu correo, LinkedIn, GitHub reales.
-  3. Sección "Proyectos": son tarjetas de ejemplo — cámbialas por proyectos reales que puedas mostrar públicamente.
-  4. Ajusta <title> y meta "description" arriba con tu nombre.
+  PENDIENTE: sección "Proyectos" — son tarjetas de ejemplo,
+  reemplázalas por proyectos reales (nombre, contexto, resultado medible).
   ============================================================
 -->
 
 <header class="site-header">
   <div class="container">
-    <a href="#top" class="brand">javier<span class="dot">.</span>gt</a>
+    <a href="#top" class="brand">estuardo<span class="dot">.</span>navarro</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#trayectoria">Trayectoria</a></li>
@@ -36,9 +33,17 @@
 
   <section class="hero" style="border-top:none;">
     <div class="container">
-      <span class="eyebrow">Guatemala — Innovación &amp; Datos</span>
-      <h1>Javier</h1>
-      <p class="role">Gerente de Innovación y Transformación Digital (CIO) en el Banco de Crédito Hipotecario Nacional (CHN). Consultor independiente en ciencia de datos desde 2017. Docente de Programación y Ciencia de Datos.</p>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Guatemala — Innovación &amp; Datos</span>
+          <h1>Javier Estuardo Navarro Delgado</h1>
+          <p class="role">Gerente de Innovación y Transformación Digital (CIO) en el Banco de Crédito Hipotecario Nacional (CHN). Consultor independiente en ciencia de datos desde 2017. Docente de Programación y Ciencia de Datos.</p>
+        </div>
+        <div class="hero-photo">
+          <img src="assets/estuardo-navarro.jpg" alt="Javier Estuardo Navarro Delgado" width="148" height="148">
+          <span class="caption">Guatemala, GT</span>
+        </div>
+      </div>
 
       <div class="ledger-strip">
         <ul>
@@ -205,10 +210,17 @@
       <h2>Del blog</h2>
       <ul class="post-index">
         <li>
-          <a href="blog/primer-post.html">
-            <span class="post-date">Entrada de ejemplo</span>
-            <span class="post-title">Por qué este espacio</span>
-            <span class="post-excerpt">Una nota breve sobre el propósito de este blog — reemplázala por tu primera entrada real.</span>
+          <a href="blog/innovacion-transformacion-digital-sector-financiero.html">
+            <span class="post-date">Julio 2026</span>
+            <span class="post-title">Innovación y transformación digital en el sector financiero</span>
+            <span class="post-excerpt">Por qué el reto de innovar en banca casi nunca es tecnológico, y qué papel juega quien dirige tecnología en una institución regulada.</span>
+          </a>
+        </li>
+        <li>
+          <a href="blog/rpg-cobol-sistemas-core-bancarios.html">
+            <span class="post-date">Julio 2026</span>
+            <span class="post-title">RPG y COBOL en el corazón de la banca</span>
+            <span class="post-excerpt">Por qué los sistemas core más críticos siguen sobre lenguajes de décadas atrás, y cómo modernizarlos sin apagar el motor.</span>
           </a>
         </li>
       </ul>
@@ -221,9 +233,9 @@
       <span class="eyebrow">Contacto</span>
       <h2>Escríbeme</h2>
       <ul class="contact-list">
-        <li>correo · <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></li>
-        <li>LinkedIn · <a href="https://linkedin.com/in/tu-usuario">linkedin.com/in/tu-usuario</a></li>
-        <li>GitHub · <a href="https://github.com/tu-usuario">github.com/tu-usuario</a></li>
+        <li>correo · <a href="mailto:javierestuardonavarro@gmail.com">javierestuardonavarro@gmail.com</a></li>
+        <li>LinkedIn · <a href="https://www.linkedin.com/in/estuardonavarro/">linkedin.com/in/estuardonavarro</a></li>
+        <li>GitHub · <a href="https://github.com/estuardonavarro">github.com/estuardonavarro</a></li>
       </ul>
     </div>
   </section>
@@ -232,7 +244,7 @@
 
 <footer class="site-footer">
   <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span>© <span id="year"></span> Javier</span>
+    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
     <span>Guatemala</span>
   </div>
 </footer>
@@ -246,6 +258,12 @@
     toggle.setAttribute('aria-expanded', open);
   });
 </script>
+
+<!-- Analítica (Cloudflare Web Analytics) — gratis, sin cookies.
+     1. Crea cuenta gratis en https://dash.cloudflare.com
+     2. Analytics & Logs → Web Analytics → Add a site → pega tu dominio
+     3. Copia el script que te dan y reemplaza la línea de abajo en TODAS las páginas -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TU_TOKEN_AQUI"}'></script> -->
 
 </body>
 </html>

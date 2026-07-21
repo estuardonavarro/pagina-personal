@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Javier</title>
+<title>Blog — Javier Estuardo Navarro Delgado</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container">
-    <a href="../index.html" class="brand">javier<span class="dot">.</span>gt</a>
+    <a href="../index.html" class="brand">estuardo<span class="dot">.</span>navarro</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="../index.html#trayectoria">Trayectoria</a></li>
@@ -32,17 +32,36 @@
   <section style="padding-top: 0;">
     <div class="container">
       <!--
-        Para agregar una entrada nueva:
-        1. Copia blog/primer-post.html a un nuevo archivo, p. ej. blog/nombre-entrada.html
-        2. Edita su título, fecha y contenido.
-        3. Agrega un <li> aquí arriba de esta lista, con el mismo patrón.
+        Para agregar una entrada nueva: copia uno de estos archivos como base,
+        edita título/fecha/contenido, y agrega un <li> aquí arriba de esta lista.
       -->
       <ul class="post-index">
         <li>
-          <a href="primer-post.html">
-            <span class="post-date">Entrada de ejemplo</span>
-            <span class="post-title">Por qué este espacio</span>
-            <span class="post-excerpt">Una nota breve sobre el propósito de este blog — reemplázala por tu primera entrada real.</span>
+          <a href="innovacion-transformacion-digital-sector-financiero.html">
+            <span class="post-date">Julio 2026</span>
+            <span class="post-title">Innovación y transformación digital en el sector financiero</span>
+            <span class="post-excerpt">Por qué el reto de innovar en banca casi nunca es tecnológico, y qué papel juega quien dirige tecnología en una institución regulada.</span>
+          </a>
+        </li>
+        <li>
+          <a href="rpg-cobol-sistemas-core-bancarios.html">
+            <span class="post-date">Julio 2026</span>
+            <span class="post-title">RPG y COBOL en el corazón de la banca</span>
+            <span class="post-excerpt">Por qué los sistemas core más críticos siguen sobre lenguajes de décadas atrás, y cómo modernizarlos sin apagar el motor.</span>
+          </a>
+        </li>
+        <li>
+          <a href="microservicios-spring-boot-java.html">
+            <span class="post-date">Julio 2026</span>
+            <span class="post-title">Microservicios con Spring Boot en Java</span>
+            <span class="post-excerpt">Los bloques básicos de una arquitectura de microservicios, los problemas que no salen en el tutorial, y cuándo no usarlos.</span>
+          </a>
+        </li>
+        <li>
+          <a href="que-son-los-compiladores.html">
+            <span class="post-date">Julio 2026</span>
+            <span class="post-title">Qué son los compiladores (y por qué todo programador debería entenderlos)</span>
+            <span class="post-excerpt">Un recorrido breve por las fases de un compilador y por qué entenderlas cambia cómo escribes código.</span>
           </a>
         </li>
       </ul>
@@ -52,7 +71,7 @@
 
 <footer class="site-footer">
   <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span>© <span id="year"></span> Javier</span>
+    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
     <span>Guatemala</span>
   </div>
 </footer>
@@ -66,6 +85,12 @@
     toggle.setAttribute('aria-expanded', open);
   });
 </script>
+
+<!-- Analítica (Cloudflare Web Analytics) — gratis, sin cookies.
+     1. Crea cuenta gratis en https://dash.cloudflare.com
+     2. Analytics & Logs → Web Analytics → Add a site → pega tu dominio
+     3. Copia el script que te dan y reemplaza la línea de abajo en TODAS las páginas -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TU_TOKEN_AQUI"}'></script> -->
 
 </body>
 </html>

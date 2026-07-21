@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué son los compiladores (y por qué todo programador debería entenderlos) — Javier Estuardo Navarro Delgado</title>
+<meta name="description" content="Un recorrido breve por las fases de un compilador y por qué entenderlas cambia la forma en que escribes código, aunque nunca construyas uno.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">estuardo<span class="dot">.</span>navarro</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none;">
+    <div class="container">
+      <a href="index.html" class="back-link">← Todas las entradas</a>
+
+      <div class="post-header">
+        <span class="post-date">Julio 2026</span>
+        <h1>Qué son los compiladores (y por qué todo programador debería entenderlos)</h1>
+      </div>
+
+      <div class="post-body">
+        <p>
+          En clase suelo preguntar quién ha escrito alguna vez un compilador. Casi nadie levanta la mano. Luego
+          pregunto quién ha depurado un error de tipos, optimizado un bucle lento, o se ha preguntado por qué el
+          mismo código corre distinto en dos máquinas. Ahí levantan la mano todos. Un compilador no es un tema
+          de nicho: es la maquinaria invisible detrás de cada una de esas preguntas.
+        </p>
+
+        <h2>Las fases de un compilador</h2>
+        <p>
+          Simplificando bastante, un compilador transforma código fuente en instrucciones ejecutables en cinco
+          etapas. El <strong>análisis léxico</strong> convierte el texto en una secuencia de tokens (palabras
+          clave, identificadores, símbolos). El <strong>análisis sintáctico</strong> organiza esos tokens en un
+          árbol que representa la estructura gramatical del programa. El <strong>análisis semántico</strong>
+          verifica que ese árbol tenga sentido —tipos compatibles, variables declaradas, alcance correcto—. La
+          <strong>generación de código intermedio</strong> traduce el árbol a una representación más cercana a
+          la máquina, y ahí entra la <strong>optimización</strong>: eliminar código muerto, simplificar
+          expresiones, reordenar instrucciones para aprovechar mejor el hardware. Al final, la
+          <strong>generación de código</strong> produce las instrucciones reales para el procesador o para una
+          máquina virtual.
+        </p>
+
+        <h2>Por qué importa aunque nunca escribas uno</h2>
+        <p>
+          Casi ningún programador construirá un compilador en su carrera. Pero entender estas fases cambia cómo
+          se lee un mensaje de error: un error de "tipo incompatible" ocurre en el análisis semántico, no en
+          tiempo de ejecución, y eso te dice dónde buscar. Explica por qué algunos lenguajes detectan errores
+          antes de correr el programa y otros no. Y explica por qué el mismo algoritmo, escrito de dos formas
+          distintas, puede compilar a código con rendimiento muy diferente: el optimizador solo puede trabajar
+          con las garantías que el código le da.
+        </p>
+
+        <h2>Un ejercicio que uso en el aula</h2>
+        <p>
+          Pido a los estudiantes que tomen una expresión aritmética simple, como <code>3 + 4 * 2</code>, y
+          construyan a mano el árbol sintáctico que respeta la precedencia de operadores. Es un ejercicio de
+          minutos, pero deja algo instalado: entender por qué existe la precedencia, y qué implica que un
+          lenguaje decida romperla o respetarla, no es un dato de examen —es la primera vez que se ve el árbol
+          detrás del texto.
+        </p>
+
+        <p>
+          Uno no necesita construir un compilador para beneficiarse de pensar como quien construye uno: en capas,
+          verificando supuestos antes de actuar sobre ellos.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
+    <span>Guatemala</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<!-- Analítica (Cloudflare Web Analytics) — gratis, sin cookies.
+     1. Crea cuenta gratis en https://dash.cloudflare.com
+     2. Analytics & Logs → Web Analytics → Add a site → pega tu dominio
+     3. Copia el script que te dan y reemplaza la línea de abajo en TODAS las páginas -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TU_TOKEN_AQUI"}'></script> -->
+
+</body>
+</html>

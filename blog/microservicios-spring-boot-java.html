@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microservicios con Spring Boot en Java — Javier Estuardo Navarro Delgado</title>
+<meta name="description" content="Los bloques básicos de una arquitectura de microservicios en Spring Boot, los problemas que no salen en el tutorial, y cuándo conviene no usarlos.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">estuardo<span class="dot">.</span>navarro</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none;">
+    <div class="container">
+      <a href="index.html" class="back-link">← Todas las entradas</a>
+
+      <div class="post-header">
+        <span class="post-date">Julio 2026</span>
+        <h1>Microservicios con Spring Boot en Java</h1>
+      </div>
+
+      <div class="post-body">
+        <p>
+          Spring Boot se volvió, casi por consenso, la puerta de entrada estándar para construir microservicios
+          en Java: arranque rápido, convención sobre configuración, y un ecosistema (Spring Cloud) pensado
+          específicamente para los problemas que aparecen cuando un sistema deja de ser un solo proceso y pasa a
+          ser varios servicios independientes hablando entre sí por red.
+        </p>
+
+        <h2>Los bloques básicos</h2>
+        <p>
+          Un microservicio típico en Spring Boot expone su funcionalidad como una API REST, con inyección de
+          dependencias resolviendo sus colaboradores internos y un servidor embebido (normalmente Tomcat o
+          Netty) que lo convierte en un ejecutable autocontenido, sin necesidad de desplegar un servidor de
+          aplicaciones aparte. Sobre esa base, Spring Cloud añade las piezas que un solo servicio no necesita
+          pero un conjunto de ellos sí: descubrimiento de servicios para que se encuentren entre sí sin
+          direcciones fijas, un servidor de configuración centralizado, y un API gateway que unifica el punto de
+          entrada hacia el resto del sistema.
+        </p>
+
+        <h2>Lo que el tutorial no suele mencionar</h2>
+        <p>
+          Levantar un microservicio individual es la parte fácil. Los problemas reales aparecen en la
+          intersección entre servicios: ¿qué pasa si el servicio de inventario responde, pero el de pagos está
+          lento? Ahí entran los patrones de resiliencia —circuit breakers, timeouts, reintentos con backoff— que
+          evitan que la lentitud de un servicio se propague en cascada al resto del sistema. Otro problema que
+          rara vez sale en un tutorial introductorio: las transacciones que antes eran una sola operación de base
+          de datos ahora cruzan varios servicios, y mantener consistencia sin un commit único obliga a diseñar
+          con patrones como saga, aceptando consistencia eventual en vez de inmediata. Y sin trazabilidad
+          distribuida —poder seguir una solicitud a través de todos los servicios que tocó— depurar un problema
+          en producción se vuelve encontrar una aguja sin saber en qué pajar buscar.
+        </p>
+
+        <h2>Cuándo no conviene usar microservicios</h2>
+        <p>
+          La arquitectura de microservicios resuelve un problema de organización y escalamiento independiente de
+          equipos y servicios; no es, por sí misma, una mejora de rendimiento ni una garantía de buen diseño. Un
+          equipo pequeño, con un dominio de negocio que aún no tiene fronteras claras, casi siempre construye
+          software más mantenible empezando con un monolito bien modularizado. Las fronteras entre servicios
+          deberían reflejar fronteras reales del negocio; cuando se definen antes de entender el dominio, lo más
+          probable es terminar con servicios fuertemente acoplados que se despliegan por separado pero cambian
+          siempre juntos —lo peor de ambos mundos.
+        </p>
+
+        <p>
+          Spring Boot facilita muchísimo la parte mecánica de construir microservicios. La parte difícil sigue
+          siendo, como casi siempre en ingeniería de software, decidir dónde trazar las fronteras.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+    <span>© <span id="year"></span> Javier Estuardo Navarro Delgado</span>
+    <span>Guatemala</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<!-- Analítica (Cloudflare Web Analytics) — gratis, sin cookies.
+     1. Crea cuenta gratis en https://dash.cloudflare.com
+     2. Analytics & Logs → Web Analytics → Add a site → pega tu dominio
+     3. Copia el script que te dan y reemplaza la línea de abajo en TODAS las páginas -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TU_TOKEN_AQUI"}'></script> -->
+
+</body>
+</html>
