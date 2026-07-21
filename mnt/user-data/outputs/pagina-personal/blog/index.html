@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Javier</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">javier<span class="dot">.</span>gt</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#trayectoria">Trayectoria</a></li>
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:none; padding-bottom: 24px;">
+    <div class="container">
+      <span class="eyebrow">Blog</span>
+      <h1 style="font-size: 2rem; margin-top: 8px;">Entradas</h1>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <!--
+        Para agregar una entrada nueva:
+        1. Copia blog/primer-post.html a un nuevo archivo, p. ej. blog/nombre-entrada.html
+        2. Edita su título, fecha y contenido.
+        3. Agrega un <li> aquí arriba de esta lista, con el mismo patrón.
+      -->
+      <ul class="post-index">
+        <li>
+          <a href="primer-post.html">
+            <span class="post-date">Entrada de ejemplo</span>
+            <span class="post-title">Por qué este espacio</span>
+            <span class="post-excerpt">Una nota breve sobre el propósito de este blog — reemplázala por tu primera entrada real.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+    <span>© <span id="year"></span> Javier</span>
+    <span>Guatemala</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>
